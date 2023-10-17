@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      .navbar {
+        background-color: #15004f;
+        color: white;
+        border-radius: 10px;
+        padding: 15px 30px;
+      }
+
+      .logo {
+        color: #f0f0f0;
+      }
+      /* Basic styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin-top: 40px;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        /*background-color: #007bff;
+        color: white;
+        padding: 10px;*/
+        text-align: center;
+        color: #007bff;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      /* Table styling */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #007bff;
+      }
+      .navbar {
+        margin: 20px 50px 20px 50px;
+      }
+      h2 {
+        color: #15004f;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--<form action="/studentRegister">
+                <button>New Student registeration</button>
+              </form>
+    <form action="/studentUpdation">
+      <button>Student Readmission / Updation</button>
+    </form>
+    <form action="/studentDetails">
+      <button>Student Details</button>
+    </form>-->
+
+    <nav class="navbar navbar-expand-md navbar-lightnav-bar">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand">
+        <span class="logo"
+          ><strong>Drop<b>X</b></strong></span
+        ></a
+      >
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/studentRegister" style="color: #ddd"
+              >Student Registration</a
+            >
+          </li>
+          <li class="nav-item logo">
+            <a class="nav-link" href="/studentDetails" style="color: #ddd"
+              >Student Details</a
+            >
+          </li>
+
+          <li class="nav-item logo">
+            <a class="nav-link" href="/studentUpdation" style="color: #ddd"
+              >Student Updation</a
+            >
+          </li>
+
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+          <!--<button type="button" class="btn btn-outline-secondary navbar-btn" >Login In</button>-->
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Student Dashboard</h1>
+    </header>
+    <div class="container">
+      <h2>Welcome, <b>Delhi Public School</b></h2>
+      <p>Here's your Student information:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Math</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Science</td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>History</td>
+            <td>C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

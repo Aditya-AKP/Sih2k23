@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <style>
+      /** {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }*/
+
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+
+      /*body {
+        font-family: sans-serif;
+        color: #333;
+        line-height: 1.5;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }*/
+      body {
+      }
+
+      .show-modal {
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 1.75rem 3.5rem;
+        margin: 5rem 2rem;
+        border: none;
+        background-color: #fff;
+        color: #444;
+        border-radius: 10rem;
+        cursor: pointer;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1.2rem;
+        right: 2rem;
+        font-size: 5rem;
+        color: #333;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+
+      /*h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }*/
+
+      /*p {
+        font-size: 1.8rem;
+      }*/
+
+      /* -------------------------- */
+      /* CLASSES TO MAKE MODAL WORK */
+      .hidden {
+        display: none;
+      }
+
+      .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+
+        background-color: white;
+        padding: 6rem;
+        border-radius: 5px;
+        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 5;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        /*background-color: #f4f4f4;*/
+        margin: 0;
+        padding: 20px 150px;
+        height: 100vh;
+      }
+      .head {
+        text-align: center;
+        background-color: #007bff;
+        color: wheat;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .container {
+        /*max-width: 600px;
+        /*margin: 0 auto;*/
+        /*padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;*/
+      }
+
+      h1 {
+        /*text-align: center;*/
+        color: #007bff;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .right {
+        margin-left: 80px;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      select {
+        appearance: none; /* Remove default arrow in some browsers */
+        -webkit-appearance: none; /* Remove default arrow in Safari */
+        -moz-appearance: none; /* Remove default arrow in Firefox */
+      }
+
+      .radio-group {
+        display: flex;
+      }
+
+      .radio-group label {
+        margin-right: 20px;
+      }
+
+      .submit-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .submit-button:hover {
+        background-color: #0056b3;
+      }
+      .tb {
+        width: 900px;
+      }
+    </style>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <title>Modal window</title>
+  </head>
+  <body>
+    <h1 class="head">Student Details</h1>
+    <div class="container">
+      <form action="/dashBoard">
+        <h2>Student information</h2>
+        <table class="tb">
+          <tr>
+            <th>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="First Name"
+                />
+              </div>
+            </th>
+            <th>
+              <div class="form-group right">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Last Name"
+                />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Father Name"
+                />
+              </div>
+            </th>
+            <th>
+              <div class="form-group right">
+                <!--<label for="courses">Grade</label>-->
+                <select id="courses" name="courses">
+                  <option value="math">1st</option>
+                  <option value="science">2nd</option>
+                  <option value="history">3rd</option>
+                  <option value="english">4th</option>
+                  <option value="math">5th</option>
+                  <option value="science">6th</option>
+                  <option value="history">7th</option>
+                  <option value="english">8th</option>
+                  <option value="history">9th</option>
+                  <option value="english">10th</option>
+                </select>
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Aadhaar No"
+                />
+              </div>
+            </th>
+            <th>
+              <div class="form-group right">
+                <!--<label for="dob">Date of Birth</label>-->
+                <input type="date" id="dob" name="dob" required />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Phone"
+                />
+              </div>
+            </th>
+            <th>
+              <div class="form-group right">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Email"
+                />
+              </div>
+            </th>
+          </tr>
+          <tr>
+            <th>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Permanent Home Address"
+                />
+              </div>
+            </th>
+            <th>
+              <div class="form-group right">
+                <div class="radio-group">
+                  <label>
+                    <input type="radio" name="gender" value="male" required />
+                    Male
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="female" required />
+                    Female
+                  </label>
+                  <label>
+                    <input type="radio" name="gender" value="other" required />
+                    Other
+                  </label>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </table>
+
+        <button type="submit" class="submit-button show-modal">Register</button>
+      </form>
+    </div>
+    <!--<button class="show-modal">Show modal 3</button>-->
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Registered student Successfully😍</h1>
+      <!--<p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>-->
+    </div>
+    <div class="overlay hidden"></div>
+
+    <!--<script src="script.js"></script>-->
+    <script>
+      const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".overlay");
+      const btnCloseModal = document.querySelector(".close-modal");
+      const btnsOpenModal = document.querySelectorAll(".show-modal");
+
+      const openModal = function () {
+        modal.classList.remove("hidden");
+        overlay.classList.remove("hidden");
+      };
+
+      const closeModal = function () {
+        modal.classList.add("hidden");
+        overlay.classList.add("hidden");
+      };
+
+      for (let i = 0; i < btnsOpenModal.length; i++)
+        btnsOpenModal[i].addEventListener("click", openModal);
+
+      btnCloseModal.addEventListener("click", closeModal);
+      overlay.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", function (e) {
+        // console.log(e.key);
+
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>
