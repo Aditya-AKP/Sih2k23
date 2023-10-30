@@ -64,21 +64,41 @@
   <body>
     <div class="login-container">
       <div class="login-header">School Login</div>
-      <form class="login-form" action="/dashBoard.html">
+      <form class="login-form">
         <input
           type="text"
           class="input-field"
           placeholder="Username"
+          id="name"
           required
         />
         <input
           type="password"
           class="input-field"
           placeholder="Password"
+          id="password"
           required
         />
-        <button type="submit" class="login-button">Login</button>
+        <input type="button" value="Login" class="login-button" onclick="javascript:validate()">
       </form>
+    </div>
+    <script type="text/javascript">
+      function validate()
+      {
+          if(   document.getElementById("name").value == "sih"
+             && document.getElementById("password").value == "123" )
+          {
+              location.href="/dashBoard.html";
+          }
+          else
+          {
+              alert( "validation failed" );
+          }
+      }
+      </script>
+  </body>
+</html>
+
     </div>
   </body>
 </html>
